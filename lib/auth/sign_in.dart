@@ -65,25 +65,19 @@ class _SignInState extends State<SignIn> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('Sign in to contunue'),
                   Text(
-                    'Vegi',
+                    'Med-X',
                     style:
-                        TextStyle(fontSize: 50, color: Colors.white, shadows: [
+                        TextStyle(fontSize: 80, color: Colors.white, shadows: [
                       BoxShadow(
                         blurRadius: 5,
-                        color: Colors.green.shade900,
+                        color: Colors.black,
                         offset: Offset(3, 3),
                       )
                     ]),
                   ),
                   Column(
                     children: [
-                      SignInButton(
-                        Buttons.Apple,
-                        text: "Sign in with Apple",
-                        onPressed: () {},
-                      ),
                       SignInButton(
                         Buttons.Google,
                         text: "Sign in with Google",
