@@ -228,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           CircleAvatar(
             radius: 15,
-            backgroundColor: Color(0xffd6d382),
+            backgroundColor: Colors.white,
             child: IconButton(
               onPressed: () {
                 Navigator.of(context).push(
@@ -241,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: Icon(
                 Icons.search,
                 size: 17,
-                color: textColor,
+                color: Colors.black,
               ),
             ),
           ),
@@ -256,12 +256,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
               child: CircleAvatar(
-                backgroundColor: Color(0xffd6d382),
+                backgroundColor: Colors.white,
                 radius: 15,
                 child: Icon(
                   Icons.shop,
                   size: 17,
-                  color: textColor,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -278,61 +278,44 @@ class _HomeScreenState extends State<HomeScreen> {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(
-                      'http://i.picasion.com/resize91/bd1c3b8a501c2e7f6d405cc21b9131cf.jpg'),
+                      'https://images.pexels.com/photos/6941883/pexels-photo-6941883.jpeg?cs=srgb&dl=pexels-nataliya-vaitkevich-6941883.jpg&fm=jpg'),
                 ),
-                color: Colors.red,
+                color: Colors.grey,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
                 children: [
                   Expanded(
-                    flex: 2,
+                    flex: 3,
                     child: Container(
                       child: Column(
                         children: [
                           Padding(
                             padding:
-                                const EdgeInsets.only(right: 130, bottom: 10),
-                            child: Container(
-                              height: 50,
-                              width: 100,
-                              decoration: BoxDecoration(
-                                color: Color(0xffd1ad17),
-                                borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(50),
-                                  bottomLeft: Radius.circular(50),
-                                ),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Diabetic Care',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                    shadows: [
-                                      BoxShadow(
-                                          color: Colors.green,
-                                          blurRadius: 10,
-                                          offset: Offset(3, 3))
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
+                                const EdgeInsets.only(right: 180, bottom: 20),
                           ),
                           Text(
                             '30% Off',
                             style: TextStyle(
                                 fontSize: 40,
-                                color: Colors.green[100],
-                                fontWeight: FontWeight.bold),
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                shadows: [
+                                  BoxShadow(
+                                    blurRadius: 5,
+                                    color: Colors.black,
+                                    offset: Offset(3, 3),
+                                  )
+                                ]),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 20),
+                            padding: const EdgeInsets.only(left: 73),
                             child: Text(
-                              'On all diabetic essentials',
+                              'On All Diabetic Essentials!',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.blueGrey[900],
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
