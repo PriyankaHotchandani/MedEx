@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Herbs Seasonings'),
+              Text('Herbal and Ayurvedic'),
               GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Fresh Fruits'),
+              Text('Covid Essentials'),
               GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
@@ -150,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Root Vegetable'),
+              Text('Nutrition & Fitness Supplements'),
               GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
@@ -278,7 +278,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi0Xg-k622Sbztlrb-L1o1CAla3zCbVc2lUw&usqp=CAU'),
+                      'http://i.picasion.com/resize91/bd1c3b8a501c2e7f6d405cc21b9131cf.jpg'),
                 ),
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(10),
@@ -305,7 +305,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               child: Center(
                                 child: Text(
-                                  'Vegi',
+                                  'Diabetic Care',
                                   style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.white,
@@ -330,7 +330,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Padding(
                             padding: const EdgeInsets.only(left: 20),
                             child: Text(
-                              'On all vegetables products',
+                              'On all diabetic essentials',
                               style: TextStyle(
                                 color: Colors.white,
                               ),
