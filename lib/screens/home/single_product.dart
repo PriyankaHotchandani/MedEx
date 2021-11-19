@@ -4,14 +4,14 @@ import 'package:med_x/models/product_model.dart';
 import 'package:med_x/widgets/count.dart';
 import 'package:med_x/widgets/product_unit.dart';
 
-class SingalProduct extends StatefulWidget {
+class singleProduct extends StatefulWidget {
   final String productImage;
   final String productName;
   final int productPrice;
   final Function onTap;
   final String productId;
   final ProductModel productUnit;
-  SingalProduct(
+  singleProduct(
       {this.productId,
       this.productImage,
       this.productName,
@@ -20,10 +20,10 @@ class SingalProduct extends StatefulWidget {
       this.productPrice});
 
   @override
-  _SingalProductState createState() => _SingalProductState();
+  _singleProductState createState() => _singleProductState();
 }
 
-class _SingalProductState extends State<SingalProduct> {
+class _singleProductState extends State<singleProduct> {
   var unitData;
   var firstValue;
   @override
@@ -76,7 +76,7 @@ class _SingalProductState extends State<SingalProduct> {
                           ),
                         ),
                         Text(
-                          '${widget.productPrice}\$/${unitData == null?firstValue:unitData}',
+                          '${widget.productPrice}\$/${unitData == null ? firstValue : unitData}',
                           style: TextStyle(
                             color: Colors.grey,
                           ),
@@ -128,7 +128,7 @@ class _SingalProductState extends State<SingalProduct> {
                                         );
                                       });
                                 },
-                                title: unitData == null?firstValue:unitData,
+                                title: unitData == null ? firstValue : unitData,
                               ),
                             ),
                             SizedBox(
@@ -139,7 +139,8 @@ class _SingalProductState extends State<SingalProduct> {
                               productImage: widget.productImage,
                               productName: widget.productName,
                               productPrice: widget.productPrice,
-                              productUnit: unitData == null?firstValue:unitData,
+                              productUnit:
+                                  unitData == null ? firstValue : unitData,
                             ),
                           ],
                         ),

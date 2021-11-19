@@ -7,7 +7,6 @@ class ProductProvider with ChangeNotifier {
 
   List<ProductModel> search = [];
   productModels(QueryDocumentSnapshot element) {
-    
     productModel = ProductModel(
       productImage: element.get("productImage"),
       productName: element.get("productName"),
@@ -18,14 +17,14 @@ class ProductProvider with ChangeNotifier {
     search.add(productModel);
   }
 
-  /////////////// herbsProduct ///////////////////////////////
-  List<ProductModel> herbsProductList = [];
+  // herbal and ayurveda products
+  List<ProductModel> herbalProductList = [];
 
-  fatchHerbsProductData() async {
+  fetchHerbalProductData() async {
     List<ProductModel> newList = [];
 
     QuerySnapshot value =
-        await FirebaseFirestore.instance.collection("HerbsProduct").get();
+        await FirebaseFirestore.instance.collection("HerbAyur").get();
 
     value.docs.forEach(
       (element) {
@@ -34,23 +33,23 @@ class ProductProvider with ChangeNotifier {
         newList.add(productModel);
       },
     );
-    herbsProductList = newList;
+    herbalProductList = newList;
     notifyListeners();
   }
 
-  List<ProductModel> get getHerbsProductDataList {
-    return herbsProductList;
+  List<ProductModel> get getHerbalProductDataList {
+    return herbalProductList;
   }
 
-//////////////// Fresh Product ///////////////////////////////////////
+// covid essential products
 
-  List<ProductModel> freshProductList = [];
+  List<ProductModel> covidProductList = [];
 
-  fatchFreshProductData() async {
+  fetchCovidProductData() async {
     List<ProductModel> newList = [];
 
     QuerySnapshot value =
-        await FirebaseFirestore.instance.collection("FreshProduct").get();
+        await FirebaseFirestore.instance.collection("Covid").get();
 
     value.docs.forEach(
       (element) {
@@ -58,23 +57,23 @@ class ProductProvider with ChangeNotifier {
         newList.add(productModel);
       },
     );
-    freshProductList = newList;
+    covidProductList = newList;
     notifyListeners();
   }
 
-  List<ProductModel> get getFreshProductDataList {
-    return freshProductList;
+  List<ProductModel> get getCovidProductDataList {
+    return covidProductList;
   }
 
-//////////////// Root Product ///////////////////////////////////////
+// nutrition & fitness products
 
-  List<ProductModel> rootProductList = [];
+  List<ProductModel> nutritionProductList = [];
 
-  fatchRootProductData() async {
+  fetchNutritionProductData() async {
     List<ProductModel> newList = [];
 
     QuerySnapshot value =
-        await FirebaseFirestore.instance.collection("RootProduct").get();
+        await FirebaseFirestore.instance.collection("Nutrition").get();
 
     value.docs.forEach(
       (element) {
@@ -82,16 +81,16 @@ class ProductProvider with ChangeNotifier {
         newList.add(productModel);
       },
     );
-    rootProductList = newList;
+    nutritionProductList = newList;
     notifyListeners();
   }
 
-  List<ProductModel> get getRootProductDataList {
-    return rootProductList;
+  List<ProductModel> get getNutritionProductDataList {
+    return nutritionProductList;
   }
 
   /////////////////// Search Return ////////////
-  List<ProductModel> get gerAllProductSearch {
+  List<ProductModel> get getAllProductSearch {
     return search;
   }
 }

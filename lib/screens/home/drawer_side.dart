@@ -51,7 +51,7 @@ class _DrawerSideState extends State<DrawerSide> {
                         backgroundColor: Colors.yellow,
                         backgroundImage: NetworkImage(
                           userData.userImage ??
-                              "https://s3.envato.com/files/328957910/vegi_thumb.png",
+                          "https://images.pexels.com/photos/6941883/pexels-photo-6941883.jpeg?cs=srgb&dl=pexels-nataliya-vaitkevich-6941883.jpg&fm=jpg"
                         ),
                         radius: 40,
                       ),
@@ -108,20 +108,7 @@ class _DrawerSideState extends State<DrawerSide> {
               },
             ),
             listTile(
-                iconData: Icons.notifications_outlined, title: "Notificatio"),
-            listTile(iconData: Icons.star_outline, title: "Rating & Review"),
-            listTile(
-                iconData: Icons.favorite_outline,
-                title: "Wishlist",
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => WishLsit(),
-                    ),
-                  );
-                }),
-            listTile(iconData: Icons.copy_outlined, title: "Raise a Complaint"),
-            listTile(iconData: Icons.format_quote_outlined, title: "FAQs"),
+                iconData: Icons.notifications_outlined, title: "Notification"),
             Container(
               height: 350,
               padding: EdgeInsets.symmetric(horizontal: 20),
@@ -129,18 +116,6 @@ class _DrawerSideState extends State<DrawerSide> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("Contact Support"),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      Text("Call us:"),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text("+923352580282"),
-                    ],
-                  ),
                   SizedBox(
                     height: 5,
                   ),
@@ -153,7 +128,7 @@ class _DrawerSideState extends State<DrawerSide> {
                           width: 10,
                         ),
                         Text(
-                          "assarbaloch5@gmail.com",
+                          "medx_support@gmail.com",
                           overflow: TextOverflow.ellipsis,
                         ),
                       ],

@@ -3,7 +3,7 @@ import 'package:med_x/config/colors.dart';
 import 'package:med_x/providers/product_provider.dart';
 import 'package:med_x/providers/user_provider.dart';
 import 'package:med_x/screens/product_overview/product_overview.dart';
-import 'package:med_x/screens/home/singal_product.dart';
+import 'package:med_x/screens/home/single_product.dart';
 import 'package:med_x/screens/review_cart/review_cart.dart';
 import 'package:med_x/screens/search/search.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   ProductProvider productProvider;
 
-  Widget _buildHerbsProduct(context) {
+  Widget _buildHerbAyurProduct(context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => Search(
-                        search: productProvider.getHerbsProductDataList,
+                        search: productProvider.getHerbalProductDataList,
                       ),
                     ),
                   );
@@ -48,9 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: productProvider.getHerbsProductDataList.map(
+            children: productProvider.getHerbalProductDataList.map(
               (herbsProductData) {
-                return SingalProduct(
+                return singleProduct(
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildFreshProduct(context) {
+  Widget _buildCovidProduct(context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -95,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => Search(
-                        search: productProvider.getFreshProductDataList,
+                        search: productProvider.getCovidProductDataList,
                       ),
                     ),
                   );
@@ -111,9 +111,9 @@ class _HomeScreenState extends State<HomeScreen> {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: productProvider.getFreshProductDataList.map(
+            children: productProvider.getCovidProductDataList.map(
               (freshProductData) {
-                return SingalProduct(
+                return singleProduct(
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
@@ -141,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 
-  Widget _buildRootProduct() {
+  Widget _buildNutritionProduct() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -156,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => Search(
-                        search: productProvider.getRootProductDataList,
+                        search: productProvider.getNutritionProductDataList,
                       ),
                     ),
                   );
@@ -172,9 +172,9 @@ class _HomeScreenState extends State<HomeScreen> {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: productProvider.getRootProductDataList.map(
+            children: productProvider.getNutritionProductDataList.map(
               (rootProductData) {
-                return SingalProduct(
+                return singleProduct(
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
@@ -204,9 +204,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     ProductProvider initproductProvider = Provider.of(context, listen: false);
-    initproductProvider.fatchHerbsProductData();
-    initproductProvider.fatchFreshProductData();
-    initproductProvider.fatchRootProductData();
+    initproductProvider.fetchHerbalProductData();
+    initproductProvider.fetchCovidProductData();
+    initproductProvider.fetchNutritionProductData();
     super.initState();
   }
 
@@ -234,7 +234,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) =>
-                        Search(search: productProvider.gerAllProductSearch),
+                        Search(search: productProvider.getAllProductSearch),
                   ),
                 );
               },
@@ -286,7 +286,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   Expanded(
-                    flex: 3,
+                    flex: 2,
                     child: Container(
                       child: Column(
                         children: [
@@ -309,12 +309,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ]),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 73),
+                            padding: const EdgeInsets.only(left: 55),
                             child: Text(
                               'On All Diabetic Essentials!',
                               style: TextStyle(
                                 color: Colors.blueGrey[900],
-                                fontSize: 18,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -329,9 +329,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            _buildHerbsProduct(context),
-            _buildFreshProduct(context),
-            _buildRootProduct(),
+            _buildHerbAyurProduct(context),
+            _buildCovidProduct(context),
+            _buildNutritionProduct(),
           ],
         ),
       ),
