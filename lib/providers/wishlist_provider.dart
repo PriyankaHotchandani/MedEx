@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:med_x/models/product_model.dart';
+import 'package:medx/models/product_model.dart';
 
 class WishListProvider with ChangeNotifier {
   addWishListData({

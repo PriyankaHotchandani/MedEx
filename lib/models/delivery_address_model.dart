@@ -3,7 +3,7 @@ class DeliveryAddressModel {
   String lastName;
   String mobileNo;
   String alternateMobileNo;
-  String scoirty;
+  String society;
   String street;
   String landMark;
   String city;
@@ -22,6 +22,6 @@ class DeliveryAddressModel {
     this.mobileNo,
     this.pinCode,
     this.street,
-    this.scoirty,
+    this.society,
   });
 }

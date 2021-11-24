@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:med_x/models/review_cart_model.dart';
+import 'package:medx/models/review_cart_model.dart';
 
 class ReviewCartProvider with ChangeNotifier {
   void addReviewCartData({
@@ -24,7 +24,6 @@ class ReviewCartProvider with ChangeNotifier {
         "cartImage": cartImage,
         "cartPrice": cartPrice,
         "cartQuantity": cartQuantity,
-        "cartUnit":cartUnit,
         "isAdd":true,
       },
     );
@@ -76,8 +75,7 @@ void updateReviewCartData({
         cartImage: element.get("cartImage"),
         cartName: element.get("cartName"),
         cartPrice: element.get("cartPrice"),
-        cartQuantity: element.get("cartQuantity"),
-      cartUnit: element.get("cartUnit"),
+        cartQuantity: element.get("cartQuantity")
       );
       newList.add(reviewCartModel);
     });

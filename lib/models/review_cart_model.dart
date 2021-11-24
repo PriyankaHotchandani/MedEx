@@ -7,10 +7,10 @@ class ReviewCartModel {
   var cartUnit;
   ReviewCartModel({
     this.cartId,
-    this.cartUnit,
     this.cartImage,
     this.cartName,
     this.cartPrice,
     this.cartQuantity,
+    this.cartUnit,
   });
 }

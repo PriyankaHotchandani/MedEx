@@ -1,6 +1,6 @@
 {
-    "name": "med_x",
-    "short_name": "med_x",
+    "name": "medx",
+    "short_name": "medx",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

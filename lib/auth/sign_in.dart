@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:med_x/providers/user_provider.dart';
-import 'package:med_x/screens/home/home_screen.dart';
+import 'package:medx/providers/user_provider.dart';
+import 'package:medx/screens/home/home_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 

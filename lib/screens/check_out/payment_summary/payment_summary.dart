@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:med_x/config/colors.dart';
-import 'package:med_x/models/delivery_address_model.dart';
-import 'package:med_x/providers/review_cart_provider.dart';
-import 'package:med_x/screens/check_out/delivery_details/single_delivery_item.dart';
-import 'package:med_x/screens/check_out/payment_summary/my_google_pay.dart';
-import 'package:med_x/screens/check_out/payment_summary/order_item.dart';
+import 'package:medx/config/colors.dart';
+import 'package:medx/models/delivery_address_model.dart';
+import 'package:medx/providers/review_cart_provider.dart';
+import 'package:medx/screens/check_out/delivery_details/single_delivery_item.dart';
+import 'package:medx/screens/check_out/payment_summary/my_google_pay.dart';
+import 'package:medx/screens/check_out/payment_summary/order_item.dart';
 import 'package:provider/provider.dart';
 
 class PaymentSummary extends StatefulWidget {
@@ -92,7 +92,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
               children: [
                 SingleDeliveryItem(
                   address:
-                      "aera, ${widget.deliverAddressList.aera}, street, ${widget.deliverAddressList.street}, society ${widget.deliverAddressList.scoirty}, pincode ${widget.deliverAddressList.pinCode}",
+                      "aera, ${widget.deliverAddressList.aera}, street, ${widget.deliverAddressList.street}, society ${widget.deliverAddressList.society}, pincode ${widget.deliverAddressList.pinCode}",
                   title:
                       "${widget.deliverAddressList.firstName} ${widget.deliverAddressList.lastName}",
                   number: widget.deliverAddressList.mobileNo,

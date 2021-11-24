@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:med_x/config/colors.dart';
+import 'package:medx/config/colors.dart';
 
 class SingleDeliveryItem extends StatelessWidget {
   final String title;

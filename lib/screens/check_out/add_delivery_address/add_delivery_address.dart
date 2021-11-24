@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:med_x/config/colors.dart';
-import 'package:med_x/providers/check_out_provider.dart';
-import 'package:med_x/screens/check_out/google_map/google_map.dart';
-import 'package:med_x/widgets/costom_text_field.dart';
+import 'package:medx/config/colors.dart';
+import 'package:medx/providers/check_out_provider.dart';
+import 'package:medx/screens/check_out/google_map/google_map.dart';
+import 'package:medx/widgets/costom_text_field.dart';
 import 'package:provider/provider.dart';
 
 class AddDeliverAddress extends StatefulWidget {

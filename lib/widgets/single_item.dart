@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:med_x/config/colors.dart';
-import 'package:med_x/providers/review_cart_provider.dart';
-import 'package:med_x/widgets/count.dart';
+import 'package:medx/config/colors.dart';
+import 'package:medx/providers/review_cart_provider.dart';
+import 'package:medx/widgets/count.dart';
 import 'package:provider/provider.dart';
 
 class SingleItem extends StatefulWidget {
@@ -97,23 +97,18 @@ class _SingleItemState extends State<SingleItem> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: <Widget>[
                                           ListTile(
-                                            title: new Text('50 Gram'),
+                                            title: new Text('250 mg'),
                                             onTap: () {
                                               Navigator.pop(context);
                                             },
                                           ),
                                           ListTile(
-                                            title: new Text('500 Gram'),
+                                            title: new Text('500 mg'),
                                             onTap: () {
                                               Navigator.pop(context);
                                             },
                                           ),
-                                          ListTile(
-                                            title: new Text('1 Kg'),
-                                            onTap: () {
-                                              Navigator.pop(context);
-                                            },
-                                          ),
+
                                         ],
                                       );
                                     });

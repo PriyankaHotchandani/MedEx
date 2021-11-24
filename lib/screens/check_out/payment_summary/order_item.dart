@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:med_x/models/review_cart_model.dart';
-import 'package:med_x/providers/review_cart_provider.dart';
+import 'package:medx/models/review_cart_model.dart';
+import 'package:medx/providers/review_cart_provider.dart';
 
 class OrderItem extends StatelessWidget {
   final ReviewCartModel e;

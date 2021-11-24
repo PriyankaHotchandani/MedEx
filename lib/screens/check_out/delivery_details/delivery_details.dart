@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:med_x/config/colors.dart';
-import 'package:med_x/models/delivery_address_model.dart';
-import 'package:med_x/providers/check_out_provider.dart';
-import 'package:med_x/screens/check_out/add_delivery_address/add_delivery_address.dart';
-import 'package:med_x/screens/check_out/delivery_details/single_delivery_item.dart';
-import 'package:med_x/screens/check_out/payment_summary/payment_summary.dart';
+import 'package:medx/config/colors.dart';
+import 'package:medx/models/delivery_address_model.dart';
+import 'package:medx/providers/check_out_provider.dart';
+import 'package:medx/screens/check_out/add_delivery_address/add_delivery_address.dart';
+import 'package:medx/screens/check_out/delivery_details/single_delivery_item.dart';
+import 'package:medx/screens/check_out/payment_summary/payment_summary.dart';
 import 'package:provider/provider.dart';
 
 class DeliveryDetails extends StatefulWidget {
@@ -90,7 +90,7 @@ class _DeliveryDetailsState extends State<DeliveryDetails> {
                     });
                     return SingleDeliveryItem(
                       address:
-                          "aera, ${e.aera}, street, ${e.street}, society ${e.scoirty}, pincode ${e.pinCode}",
+                          "aera, ${e.aera}, street, ${e.street}, society ${e.society}, pincode ${e.pinCode}",
                       title: "${e.firstName} ${e.lastName}",
                       number: e.mobileNo,
                       addressType: e.addressType == "AddressTypes.Home"

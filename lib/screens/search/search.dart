@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:med_x/models/product_model.dart';
-import 'package:med_x/widgets/single_item.dart';
+import 'package:medx/models/product_model.dart';
+import 'package:medx/widgets/single_item.dart';
 
 
 class Search extends StatefulWidget {

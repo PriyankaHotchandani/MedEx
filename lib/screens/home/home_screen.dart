@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:med_x/config/colors.dart';
-import 'package:med_x/providers/product_provider.dart';
-import 'package:med_x/providers/user_provider.dart';
-import 'package:med_x/screens/product_overview/product_overview.dart';
-import 'package:med_x/screens/home/single_product.dart';
-import 'package:med_x/screens/review_cart/review_cart.dart';
-import 'package:med_x/screens/search/search.dart';
+import 'package:medx/config/colors.dart';
+import 'package:medx/providers/product_provider.dart';
+import 'package:medx/providers/user_provider.dart';
+import 'package:medx/screens/product_overview/product_overview.dart';
+import 'package:medx/screens/home/single_product.dart';
+import 'package:medx/screens/review_cart/review_cart.dart';
+import 'package:medx/screens/search/search.dart';
 import 'package:provider/provider.dart';
 import 'drawer_side.dart';
 
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => Search(
-                        search: productProvider.getHerbalProductDataList,
+                        search: productProvider.getHerbAyurDataList,
                       ),
                     ),
                   );
@@ -48,26 +48,25 @@ class _HomeScreenState extends State<HomeScreen> {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: productProvider.getHerbalProductDataList.map(
-              (herbsProductData) {
+            children: productProvider.getHerbAyurDataList.map(
+              (HerbAyurData) {
                 return singleProduct(
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => ProductOverview(
-                          productId: herbsProductData.productId,
-                          productPrice: herbsProductData.productPrice,
-                          productName: herbsProductData.productName,
-                          productImage: herbsProductData.productImage,
+                          productPrice: HerbAyurData.productPrice,
+                          productName: HerbAyurData.productName,
+                          productImage: HerbAyurData.productImage,
                         ),
                       ),
                     );
                   },
-                  productId: herbsProductData.productId,
-                  productPrice: herbsProductData.productPrice,
-                  productImage: herbsProductData.productImage,
-                  productName: herbsProductData.productName,
-                  productUnit:herbsProductData ,
+                  productId: HerbAyurData.productId,
+                  productPrice: HerbAyurData.productPrice,
+                  productImage: HerbAyurData.productImage,
+                  productName: HerbAyurData.productName,
+                  productUnit:HerbAyurData ,
                 );
               },
             ).toList(),
@@ -204,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     ProductProvider initproductProvider = Provider.of(context, listen: false);
-    initproductProvider.fetchHerbalProductData();
+    initproductProvider.fetchHerbAyurData();
     initproductProvider.fetchCovidProductData();
     initproductProvider.fetchNutritionProductData();
     super.initState();

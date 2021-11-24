@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:med_x/config/colors.dart';
-import 'package:med_x/models/user_model.dart';
-import 'package:med_x/providers/user_provider.dart';
-import 'package:med_x/screens/home/drawer_side.dart';
+import 'package:medx/config/colors.dart';
+import 'package:medx/models/user_model.dart';
+import 'package:medx/providers/user_provider.dart';
+import 'package:medx/screens/home/drawer_side.dart';
 
 class MyProfile extends StatefulWidget {
   UserProvider userProvider;

@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:med_x/models/delivery_address_model.dart';
-import 'package:med_x/models/review_cart_model.dart';
+import 'package:medx/models/delivery_address_model.dart';
+import 'package:medx/models/review_cart_model.dart';
 import 'package:location/location.dart';
 
 class CheckoutProvider with ChangeNotifier {
@@ -95,7 +95,7 @@ class CheckoutProvider with ChangeNotifier {
         landMark: _db.get("landmark"),
         mobileNo: _db.get("mobileNo"),
         pinCode: _db.get("pincode"),
-        scoirty: _db.get("scoiety"),
+        society: _db.get("scoiety"),
         street: _db.get("street"),
       );
       newList.add(deliveryAddressModel);

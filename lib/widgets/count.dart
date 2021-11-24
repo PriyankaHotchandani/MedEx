@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:med_x/config/colors.dart';
-import 'package:med_x/models/product_model.dart';
-import 'package:med_x/providers/review_cart_provider.dart';
+import 'package:medx/config/colors.dart';
+import 'package:medx/models/product_model.dart';
+import 'package:medx/providers/review_cart_provider.dart';
 import 'package:provider/provider.dart';
 
 class Count extends StatefulWidget {

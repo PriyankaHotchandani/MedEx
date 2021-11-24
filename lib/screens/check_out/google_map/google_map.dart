@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:med_x/config/colors.dart';
-import 'package:med_x/providers/check_out_provider.dart';
+import 'package:medx/config/colors.dart';
+import 'package:medx/providers/check_out_provider.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:provider/provider.dart';

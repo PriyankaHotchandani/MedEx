@@ -3,11 +3,11 @@ import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:med_x/config/colors.dart';
-import 'package:med_x/models/review_cart_model.dart';
-import 'package:med_x/providers/wishlist_provider.dart';
-import 'package:med_x/screens/review_cart/review_cart.dart';
-import 'package:med_x/widgets/count.dart';
+import 'package:medx/config/colors.dart';
+import 'package:medx/models/review_cart_model.dart';
+import 'package:medx/providers/wishlist_provider.dart';
+import 'package:medx/screens/review_cart/review_cart.dart';
+import 'package:medx/widgets/count.dart';
 import 'package:provider/provider.dart';
 
 enum SinginCharacter { fill, outline }

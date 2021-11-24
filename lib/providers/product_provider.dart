@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:med_x/models/product_model.dart';
+import 'package:medx/models/product_model.dart';
 
 class ProductProvider with ChangeNotifier {
   ProductModel productModel;
@@ -18,14 +18,15 @@ class ProductProvider with ChangeNotifier {
   }
 
   // herbal and ayurveda products
-  List<ProductModel> herbalProductList = [];
+  List<ProductModel> HerbAyurList = [];
 
-  fetchHerbalProductData() async {
+  fetchHerbAyurData() async {
+    print("In herbaAyur");
     List<ProductModel> newList = [];
 
     QuerySnapshot value =
         await FirebaseFirestore.instance.collection("HerbAyur").get();
-
+    print("Query Snaps");
     value.docs.forEach(
       (element) {
         productModels(element);
@@ -33,12 +34,14 @@ class ProductProvider with ChangeNotifier {
         newList.add(productModel);
       },
     );
-    herbalProductList = newList;
+    print("New List created");
+    print(newList);
+    HerbAyurList = newList;
     notifyListeners();
   }
 
-  List<ProductModel> get getHerbalProductDataList {
-    return herbalProductList;
+  List<ProductModel> get getHerbAyurDataList {
+    return HerbAyurList;
   }
 
 // covid essential products
@@ -78,6 +81,7 @@ class ProductProvider with ChangeNotifier {
     value.docs.forEach(
       (element) {
         productModels(element);
+        print("Nutrition");
         newList.add(productModel);
       },
     );

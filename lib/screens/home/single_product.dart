@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:med_x/config/colors.dart';
-import 'package:med_x/models/product_model.dart';
-import 'package:med_x/widgets/count.dart';
-import 'package:med_x/widgets/product_unit.dart';
+import 'package:medx/config/colors.dart';
+import 'package:medx/models/product_model.dart';
+import 'package:medx/widgets/count.dart';
+import 'package:medx/widgets/product_unit.dart';
 
 class singleProduct extends StatefulWidget {
   final String productImage;
@@ -76,7 +76,7 @@ class _singleProductState extends State<singleProduct> {
                           ),
                         ),
                         Text(
-                          '${widget.productPrice}\$/${unitData == null ? firstValue : unitData}',
+                          '${widget.productPrice} \Rs/${unitData == null ? firstValue : unitData}',
                           style: TextStyle(
                             color: Colors.grey,
                           ),
