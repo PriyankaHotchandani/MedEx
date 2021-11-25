@@ -42,9 +42,15 @@ class _singleProductState extends State<singleProduct> {
             margin: EdgeInsets.only(right: 10),
             height: 230,
             width: 165,
+            
             decoration: BoxDecoration(
-              color: Color(0xffd9dad9),
+              color: Colors.white,
+              border: Border.all(
+                      color: Colors.grey[300],
+                      width: 2,
+                    ),
               borderRadius: BorderRadius.circular(10),
+              
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,12 +77,12 @@ class _singleProductState extends State<singleProduct> {
                         Text(
                           widget.productName,
                           style: TextStyle(
-                            color: textColor,
+                            color: Colors.grey[850],
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         Text(
-                          '${widget.productPrice} \Rs/${unitData == null ? firstValue : unitData}',
+                          '${widget.productPrice} \Rs/ ${unitData == null ? firstValue : unitData}',
                           style: TextStyle(
                             color: Colors.grey,
                           ),

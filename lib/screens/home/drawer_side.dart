@@ -75,7 +75,7 @@ class _DrawerSideState extends State<DrawerSide> {
               ),
             ),
             listTile(
-              iconData: Icons.home_outlined,
+              iconData: Icons.home_filled,
               title: "Home",
               onTap: () {
                 Navigator.of(context).push(
@@ -86,7 +86,7 @@ class _DrawerSideState extends State<DrawerSide> {
               },
             ),
             listTile(
-              iconData: Icons.shop_outlined,
+              iconData: Icons.add_shopping_cart,
               title: "Review Cart",
               onTap: () {
                 Navigator.of(context).push(
@@ -97,7 +97,7 @@ class _DrawerSideState extends State<DrawerSide> {
               },
             ),
             listTile(
-              iconData: Icons.person_outlined,
+              iconData: Icons.person,
               title: "My Profile",
               onTap: () {
                 Navigator.of(context).push(
@@ -108,20 +108,11 @@ class _DrawerSideState extends State<DrawerSide> {
               },
             ),
             listTile(
-                iconData: Icons.notifications_outlined, title: "Notificatio"),
-            listTile(iconData: Icons.star_outline, title: "Rating & Review"),
-            listTile(
-                iconData: Icons.favorite_outline,
-                title: "Wishlist",
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => WishLsit(),
-                    ),
-                  );
-                }),
-            listTile(iconData: Icons.copy_outlined, title: "Raise a Complaint"),
-            listTile(iconData: Icons.format_quote_outlined, title: "FAQs"),
+                iconData: Icons.notifications, title: "Notification"),
+            listTile(iconData: Icons.star, title: "Rating & Review"),
+            
+            listTile(iconData: Icons.note, title: "Raise a Complaint"),
+            listTile(iconData: Icons.format_quote, title: "FAQs"),
             Container(
               height: 350,
               padding: EdgeInsets.symmetric(horizontal: 20),
@@ -132,15 +123,15 @@ class _DrawerSideState extends State<DrawerSide> {
                   SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    children: [
-                      Text("Call us:"),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text("+923352580282"),
-                    ],
-                  ),
+                  // Row(
+                  //   children: [
+                  //     Text("Call us:"),
+                  //     SizedBox(
+                  //       width: 10,
+                  //     ),
+                  //     Text("+913784683543"),
+                  //   ],
+                  // ),
                   SizedBox(
                     height: 5,
                   ),
@@ -153,7 +144,7 @@ class _DrawerSideState extends State<DrawerSide> {
                           width: 10,
                         ),
                         Text(
-                          "assarbaloch5@gmail.com",
+                          "medex@support.com",
                           overflow: TextOverflow.ellipsis,
                         ),
                       ],

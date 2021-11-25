@@ -17,8 +17,9 @@ class ProductOverview extends StatefulWidget {
   final String productImage;
   final int productPrice;
   final String productId;
+  final String productUnit;
   ProductOverview(
-      {this.productId, this.productImage, this.productName, this.productPrice});
+      {this.productId, this.productImage, this.productName, this.productPrice,this.productUnit});
 
   @override
   _ProductOverviewState createState() => _ProductOverviewState();
@@ -46,15 +47,15 @@ class _ProductOverviewState extends State<ProductOverview> {
             children: [
               Icon(
                 iconData,
-                size: 20,
-                color: iconColor,
+                size: 23,
+                color: Colors.white,
               ),
               SizedBox(
                 width: 5,
               ),
               Text(
                 title,
-                style: TextStyle(color: color),
+                style: TextStyle(color: color,fontSize: 20),
               ),
             ],
           ),
@@ -94,37 +95,14 @@ class _ProductOverviewState extends State<ProductOverview> {
     return Scaffold(
       bottomNavigationBar: Row(
         children: [
-          bonntonNavigatorBar(
-              backgroundColor: textColor,
-              color: Colors.white70,
-              iconColor: Colors.grey,
-              title: "Add To WishList",
-              iconData: wishListBool == false
-                  ? Icons.favorite_outline
-                  : Icons.favorite,
-              onTap: () {
-                setState(() {
-                  wishListBool = !wishListBool;
-                });
-                if (wishListBool == true) {
-                  wishListProvider.addWishListData(
-                    wishListId: widget.productId,
-                    wishListImage: widget.productImage,
-                    wishListName: widget.productName,
-                    wishListPrice: widget.productPrice,
-                    wishListQuantity: 2,
-                    
-                  );
-                } else {
-                  wishListProvider.deleteWishtList(widget.productId);
-                }
-              }),
+          
           bonntonNavigatorBar(
               backgroundColor: primaryColor,
               color: textColor,
               iconColor: Colors.white70,
-              title: "Go To Cart",
-              iconData: Icons.shop_outlined,
+              title: "Add To Cart",
+      
+              iconData: Icons.add_shopping_cart,
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -135,6 +113,7 @@ class _ProductOverviewState extends State<ProductOverview> {
         ],
       ),
       appBar: AppBar(
+        backgroundColor: primaryColor,
         iconTheme: IconThemeData(color: textColor),
         title: Text(
           "Product Overview",
@@ -150,8 +129,10 @@ class _ProductOverviewState extends State<ProductOverview> {
               child: Column(
                 children: [
                   ListTile(
-                    title: Text(widget.productName),
-                    subtitle: Text("\$50"),
+                    title: Text(widget.productName,
+                    style : TextStyle(fontSize: 20,fontWeight:FontWeight.bold)),
+                    
+                    subtitle: Text("\Rs ${widget.productPrice}"),
                   ),
                   Container(
                       height: 250,
@@ -180,10 +161,6 @@ class _ProductOverviewState extends State<ProductOverview> {
                       children: [
                         Row(
                           children: [
-                            CircleAvatar(
-                              radius: 3,
-                              backgroundColor: Colors.green[700],
-                            ),
                             Radio(
                               value: SinginCharacter.fill,
                               groupValue: _character,
@@ -194,46 +171,24 @@ class _ProductOverviewState extends State<ProductOverview> {
                                 });
                               },
                             ),
+                            Text("\Rs ${widget.productPrice}"),
                           ],
+                          
                         ),
-                        Text("\$${widget.productPrice}"),
+                        
+                        
                         Count(
                           productId: widget.productId,
                           productImage: widget.productImage,
                           productName: widget.productName,
                           productPrice: widget.productPrice,
-                          productUnit: '500 Gram',
+                          productUnit: widget.productUnit,
                         ),
-                        // Container(
-                        //   padding: EdgeInsets.symmetric(
-                        //     horizontal: 30,
-                        //     vertical: 10,
-                        //   ),
-                        //   decoration: BoxDecoration(
-                        //     border: Border.all(
-                        //       color: Colors.grey,
-                        //     ),
-                        //     borderRadius: BorderRadius.circular(
-                        //       30,
-                        //     ),
-                        //   ),
-                        //   child: Row(
-                        //     mainAxisAlignment: MainAxisAlignment.center,
-                        //     children: [
-                        //       Icon(
-                        //         Icons.add,
-                        //         size: 17,
-                        //         color: primaryColor,
-                        //       ),
-                        //       Text(
-                        //         "ADD",
-                        //         style: TextStyle(color: primaryColor),
-                        //       )
-                        //     ],
-                        //   ),
-                        // ),
+                        // Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0),)
                       ],
+                      
                     ),
+                    
                   )
                 ],
               ),
@@ -241,7 +196,7 @@ class _ProductOverviewState extends State<ProductOverview> {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.fromLTRB(20,0,20,20),
               width: double.infinity,
               child: ListView(
                 children: [
@@ -256,10 +211,10 @@ class _ProductOverviewState extends State<ProductOverview> {
                     height: 20,
                   ),
                   Text(
-                    "of a customer. Wikipedi In marketing, a product is an object or system made available for consumer use; it is anything that can be offered to a market to satisfy the desire or need of a customer. Wikipedi",
+                    "People take medicines to fight illness, to feel better when they're sick, and to keep from getting sick in the first place. When deciding which medicine to give a patient, a doctor thinks about what is causing the patient's problem.Medicines are chemicals or compounds used to cure, halt, or prevent disease; ease symptoms; or help in the diagnosis of illnesses.",
                     style: TextStyle(
                       fontSize: 16,
-                      color: textColor,
+                      color: Colors.black,
                     ),
                   ),
                 ],

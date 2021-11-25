@@ -26,7 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Herbal and Ayurvedic'),
+              Text('Herbal & Ayurvedic',
+              style : TextStyle(fontSize: 16,fontWeight:FontWeight.bold)
+              ),
               GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
@@ -39,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: Text(
                   'view all',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Color.fromARGB( 255,27, 27, 27)),
                 ),
               ),
             ],
@@ -88,7 +90,9 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Covid Essentials'),
+              Text('Covid Essentials',
+              style : TextStyle(fontSize: 16,fontWeight:FontWeight.bold)
+              ),
               GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
@@ -101,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: Text(
                   'view all',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Color.fromARGB( 255,27, 27, 27)),
                 ),
               ),
             ],
@@ -149,7 +153,9 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Nutrition & Fitness Supplements'),
+              Text('Nutrition & Fitness Supplements',
+              style : TextStyle(fontSize: 16,fontWeight:FontWeight.bold)
+              ),
               GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
@@ -162,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: Text(
                   'view all',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Color.fromARGB( 255,27, 27, 27)),
                 ),
               ),
             ],
@@ -219,10 +225,11 @@ class _HomeScreenState extends State<HomeScreen> {
         userProvider: userProvider,
       ),
       appBar: AppBar(
+        backgroundColor: primaryColor,
         iconTheme: IconThemeData(color: textColor),
         title: Text(
-          'Home',
-          style: TextStyle(color: textColor, fontSize: 17),
+          'MedEx',
+          style: TextStyle(color: textColor, fontSize: 20),
         ),
         actions: [
           CircleAvatar(
@@ -258,7 +265,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 backgroundColor: Colors.white,
                 radius: 15,
                 child: Icon(
-                  Icons.shop,
+                  Icons.add_shopping_cart,
                   size: 17,
                   color: Colors.black,
                 ),
@@ -308,9 +315,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ]),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 55),
+                            padding: const EdgeInsets.only(left: 40),
                             child: Text(
-                              'On All Diabetic Essentials!',
+                              'On All Covid Essentials!',
                               style: TextStyle(
                                 color: Colors.blueGrey[900],
                                 fontSize: 16,
