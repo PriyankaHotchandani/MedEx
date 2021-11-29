@@ -20,6 +20,7 @@ class _DeliveryDetailsState extends State<DeliveryDetails> {
     deliveryAddressProvider.getDeliveryAddressData();
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: primaryColor,
         title: Text("Delivery Details"),
       ),
       floatingActionButton: FloatingActionButton(
@@ -41,8 +42,8 @@ class _DeliveryDetailsState extends State<DeliveryDetails> {
         margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: MaterialButton(
           child: deliveryAddressProvider.getDeliveryAddressList.isEmpty
-              ? Text("Add new Address")
-              : Text("Payment Summary"),
+              ? Text("Add new Address",style : TextStyle(color: Colors.white))
+              : Text("Payment Summary",style : TextStyle(color: Colors.white)),
           onPressed: () {
             deliveryAddressProvider.getDeliveryAddressList.isEmpty
                 ? Navigator.of(context).push(
@@ -90,7 +91,7 @@ class _DeliveryDetailsState extends State<DeliveryDetails> {
                     });
                     return SingleDeliveryItem(
                       address:
-                          "aera, ${e.aera}, street, ${e.street}, society ${e.society}, pincode ${e.pinCode}",
+                          "area, ${e.area}, street, ${e.street}, society ${e.society}, pincode ${e.pinCode}",
                       title: "${e.firstName} ${e.lastName}",
                       number: e.mobileNo,
                       addressType: e.addressType == "AddressTypes.Home"

@@ -7,13 +7,13 @@ class DeliveryAddressModel {
   String street;
   String landMark;
   String city;
-  String aera;
+  String area;
   String pinCode;
   String addressType;
 
   DeliveryAddressModel({
     this.addressType,
-    this.aera,
+    this.area,
     this.alternateMobileNo,
     this.city,
     this.firstName,

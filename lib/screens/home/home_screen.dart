@@ -57,9 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => ProductOverview(
+                          productId : HerbAyurData.productId,
                           productPrice: HerbAyurData.productPrice,
                           productName: HerbAyurData.productName,
                           productImage: HerbAyurData.productImage,
+                          productUnit: HerbAyurData.productUnit[0],
                         ),
                       ),
                     );

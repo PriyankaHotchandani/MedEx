@@ -6,6 +6,7 @@ import 'package:medx/screens/check_out/delivery_details/single_delivery_item.dar
 import 'package:medx/screens/check_out/payment_summary/my_google_pay.dart';
 import 'package:medx/screens/check_out/payment_summary/order_item.dart';
 import 'package:provider/provider.dart';
+import 'package:medx/screens/home/home_screen.dart';
 
 class PaymentSummary extends StatefulWidget {
   final DeliveryAddressModel deliverAddressList;
@@ -25,21 +26,54 @@ class _PaymentSummaryState extends State<PaymentSummary> {
 
   @override
   Widget build(BuildContext context) {
+    showAlertDialog(BuildContext context) {
+    // set up the buttons
+
+    Widget continueButton = FlatButton(
+      child: Text("Continue"),
+      onPressed: () {
+        Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => HomeScreen(),
+          ),
+        ); 
+      },
+    );
+   
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Your order has been placed successfully!"),
+      content: Text("Check your email for order details"),
+
+      actions: [
+        continueButton,
+      ],
+      
+      
+    );
+
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
     ReviewCartProvider reviewCartProvider = Provider.of(context);
     reviewCartProvider.getReviewCartData();
 
-    double discount = 30;
-    double discountValue;
-    double shippingChanrge = 3.7;
     double total;
     double totalPrice = reviewCartProvider.getTotalPrice();
-    if (totalPrice > 300) {
-      discountValue = (totalPrice * discount) / 100;
-      total = totalPrice - discountValue;
-    }
+    // if (totalPrice > 300) {
+    //   discountValue = (totalPrice * discount) / 100;
+    //   total = totalPrice - discountValue;
+    // }
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: primaryColor,
         title: Text(
           "Payment Summary",
           style: TextStyle(fontSize: 18),
@@ -48,7 +82,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
       bottomNavigationBar: ListTile(
         title: Text("Total Amount"),
         subtitle: Text(
-          "\$${total + 5 ?? totalPrice}",
+          "\Rs ${totalPrice+40}",
           style: TextStyle(
             color: Colors.green[900],
             fontWeight: FontWeight.bold,
@@ -59,19 +93,11 @@ class _PaymentSummaryState extends State<PaymentSummary> {
           width: 160,
           child: MaterialButton(
             onPressed: () {
-              // myType == AddressTypes.OnlinePayment
-              //     ? Navigator.of(context).push(
-              //         MaterialPageRoute(
-              //           builder: (context) => MyGooglePay(
-              //             total: total,
-              //           ),
-              //         ),
-              //       )
-              //     : Container();
-            
+              showAlertDialog(context); 
+                      
             },
             child: Text(
-              "Pleace Order",
+              "Place Order",
               style: TextStyle(
                 color: textColor,
               ),
@@ -92,7 +118,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
               children: [
                 SingleDeliveryItem(
                   address:
-                      "aera, ${widget.deliverAddressList.aera}, street, ${widget.deliverAddressList.street}, society ${widget.deliverAddressList.society}, pincode ${widget.deliverAddressList.pinCode}",
+                      "area, ${widget.deliverAddressList.area}, street, ${widget.deliverAddressList.street}, society ${widget.deliverAddressList.society}, pincode ${widget.deliverAddressList.pinCode}",
                   title:
                       "${widget.deliverAddressList.firstName} ${widget.deliverAddressList.lastName}",
                   number: widget.deliverAddressList.mobileNo,
@@ -124,7 +150,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                     ),
                   ),
                   trailing: Text(
-                    "\$${totalPrice + 5}",
+                    "\Rs $totalPrice",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -137,7 +163,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                     style: TextStyle(color: Colors.grey[600]),
                   ),
                   trailing: Text(
-                    "\$$discountValue",
+                    "\Rs 50",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -146,11 +172,11 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                 ListTile(
                   minVerticalPadding: 5,
                   leading: Text(
-                    "Compen Discount",
+                    "Coupon Discount",
                     style: TextStyle(color: Colors.grey[600]),
                   ),
                   trailing: Text(
-                    "\$10",
+                    "\Rs 10",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -163,7 +189,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                 RadioListTile(
                   value: AddressTypes.Home,
                   groupValue: myType,
-                  title: Text("Home"),
+                  title: Text("Cash on delivery"),
                   onChanged: (AddressTypes value) {
                     setState(() {
                       myType = value;
@@ -177,7 +203,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                 RadioListTile(
                   value: AddressTypes.OnlinePayment,
                   groupValue: myType,
-                  title: Text("OnlinePayment"),
+                  title: Text("Online Payment"),
                   onChanged: (AddressTypes value) {
                     setState(() {
                       myType = value;

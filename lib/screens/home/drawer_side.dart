@@ -107,11 +107,8 @@ class _DrawerSideState extends State<DrawerSide> {
                 );
               },
             ),
-            listTile(
-                iconData: Icons.notifications, title: "Notification"),
             listTile(iconData: Icons.star, title: "Rating & Review"),
             
-            listTile(iconData: Icons.note, title: "Raise a Complaint"),
             listTile(iconData: Icons.format_quote, title: "FAQs"),
             Container(
               height: 350,

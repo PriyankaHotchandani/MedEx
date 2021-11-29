@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:medx/config/colors.dart';
 import 'package:medx/models/product_model.dart';
+import 'package:medx/screens/home/single_product.dart';
 import 'package:medx/widgets/single_item.dart';
 
 
@@ -26,6 +28,7 @@ class _SearchState extends State<Search> {
     List<ProductModel> _searchItem = searchItem(query);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor:primaryColor,
         title: Text("Search"),
         actions: [
           Padding(
@@ -74,6 +77,7 @@ class _SearchState extends State<Search> {
                 productImage: data.productImage,
                 productName: data.productName,
                 productPrice: data.productPrice,
+                productUnit: selected_units,
               );
             }).toList(),
           )

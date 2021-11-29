@@ -9,6 +9,7 @@ import 'package:medx/providers/wishlist_provider.dart';
 import 'package:medx/screens/review_cart/review_cart.dart';
 import 'package:medx/widgets/count.dart';
 import 'package:provider/provider.dart';
+import 'package:medx/screens/home/single_product.dart';
 
 enum SinginCharacter { fill, outline }
 
@@ -26,6 +27,7 @@ class ProductOverview extends StatefulWidget {
 }
 
 class _ProductOverviewState extends State<ProductOverview> {
+  
   SinginCharacter _character = SinginCharacter.fill;
 
   Widget bonntonNavigatorBar({
@@ -67,6 +69,9 @@ class _ProductOverviewState extends State<ProductOverview> {
   bool wishListBool = false;
 
   getWishtListBool() {
+    print("The Product ID");
+    print(widget.productId);
+    print(selected_units);
     FirebaseFirestore.instance
         .collection("WishList")
         .doc(FirebaseAuth.instance.currentUser.uid)
@@ -90,6 +95,9 @@ class _ProductOverviewState extends State<ProductOverview> {
 
   @override
   Widget build(BuildContext context) {
+    print("Widget here");
+    print(widget);
+    
     WishListProvider wishListProvider = Provider.of(context);
     getWishtListBool();
     return Scaffold(
@@ -130,7 +138,7 @@ class _ProductOverviewState extends State<ProductOverview> {
                 children: [
                   ListTile(
                     title: Text(widget.productName,
-                    style : TextStyle(fontSize: 20,fontWeight:FontWeight.bold)),
+                    style : TextStyle(fontSize: 28,fontWeight:FontWeight.bold)),
                     
                     subtitle: Text("\Rs ${widget.productPrice}"),
                   ),
@@ -171,18 +179,20 @@ class _ProductOverviewState extends State<ProductOverview> {
                                 });
                               },
                             ),
-                            Text("\Rs ${widget.productPrice}"),
+                            Text("\Rs ${widget.productPrice}",
+                              style : TextStyle(fontSize: 16,fontWeight:FontWeight.bold)
+                            ),
                           ],
                           
                         ),
-                        
                         
                         Count(
                           productId: widget.productId,
                           productImage: widget.productImage,
                           productName: widget.productName,
                           productPrice: widget.productPrice,
-                          productUnit: widget.productUnit,
+                           productUnit:
+                                  widget.productUnit == null ? '250 mg' : 'None',
                         ),
                         // Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0),)
                       ],

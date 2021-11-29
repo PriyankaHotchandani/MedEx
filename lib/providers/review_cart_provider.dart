@@ -24,6 +24,7 @@ class ReviewCartProvider with ChangeNotifier {
         "cartImage": cartImage,
         "cartPrice": cartPrice,
         "cartQuantity": cartQuantity,
+        "cartUnit" :cartUnit,
         "isAdd":true,
       },
     );
@@ -37,6 +38,7 @@ void updateReviewCartData({
     String cartImage,
     int cartPrice,
     int cartQuantity,
+    var cartUnit,
   }) async {
     FirebaseFirestore.instance
         .collection("ReviewCart")
@@ -50,6 +52,7 @@ void updateReviewCartData({
         "cartImage": cartImage,
         "cartPrice": cartPrice,
         "cartQuantity": cartQuantity,
+        "cartUnit" : cartUnit,
         "isAdd":true,
       },
     );
@@ -75,7 +78,8 @@ void updateReviewCartData({
         cartImage: element.get("cartImage"),
         cartName: element.get("cartName"),
         cartPrice: element.get("cartPrice"),
-        cartQuantity: element.get("cartQuantity")
+        cartQuantity: element.get("cartQuantity"),
+        cartUnit: element.get("cartUnit"),
       );
       newList.add(reviewCartModel);
     });

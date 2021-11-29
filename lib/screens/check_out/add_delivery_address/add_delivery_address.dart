@@ -17,12 +17,28 @@ enum AddressTypes {
 }
 
 class _AddDeliverAddressState extends State<AddDeliverAddress> {
+  Widget listTile({String title, IconData iconData}) {
+    return Container(
+      height: 30,
+      child: ListTile(
+        leading: Icon(
+          iconData,
+          size: 20,
+        ),
+        title: Text(
+          title,
+          style: TextStyle(color: Colors.grey[700]),
+        ),
+      ),
+    );
+  }
   var myType = AddressTypes.Home;
   @override
   Widget build(BuildContext context) {
     CheckoutProvider checkoutProvider = Provider.of(context);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: primaryColor,
         title: Text(
           "Add Delivery Address",
           style: TextStyle(fontSize: 18),
@@ -76,8 +92,8 @@ class _AddDeliverAddressState extends State<AddDeliverAddress> {
               controller: checkoutProvider.alternateMobileNo,
             ),
             CostomTextField(
-              labText: "Scoiety",
-              controller: checkoutProvider.scoiety,
+              labText: "Society",
+              controller: checkoutProvider.society,
             ),
             CostomTextField(
               labText: "Street",
@@ -92,8 +108,8 @@ class _AddDeliverAddressState extends State<AddDeliverAddress> {
               controller: checkoutProvider.city,
             ),
             CostomTextField(
-              labText: "Aera",
-              controller: checkoutProvider.aera,
+              labText: "area",
+              controller: checkoutProvider.area,
             ),
             CostomTextField(
               labText: "Pincode",
@@ -114,7 +130,14 @@ class _AddDeliverAddressState extends State<AddDeliverAddress> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    checkoutProvider.setLoaction == null? Text("Set Loaction"):
+                    
+                    checkoutProvider.setLoaction == null? (
+                      
+                      listTile(
+                      iconData: Icons.map_rounded,
+                      title: "Select location from maps",
+                      
+                    )):
                     Text("Done!"),
                   ],
                 ),

@@ -5,6 +5,7 @@ import 'package:medx/config/colors.dart';
 import 'package:medx/models/product_model.dart';
 import 'package:medx/providers/review_cart_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:medx/screens/home/single_product.dart';
 
 class Count extends StatefulWidget {
   String productName;
@@ -84,19 +85,20 @@ class _CountState extends State<Count> {
                         cartName: widget.productName,
                         cartPrice: widget.productPrice,
                         cartQuantity: count,
+                        cartUnit: selected_units==null?'50 mg':selected_units,
                       );
                     }
                   },
                   child: Icon(
                     Icons.remove,
                     size: 15,
-                    color: Color(0xffd0b84c),
+                    color: primaryColor,
                   ),
                 ),
                 Text(
                   "$count",
                   style: TextStyle(
-                    color: Color(0xffd0b84c),
+                    color: primaryColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -111,12 +113,13 @@ class _CountState extends State<Count> {
                       cartName: widget.productName,
                       cartPrice: widget.productPrice,
                       cartQuantity: count,
+                      cartUnit:selected_units==null?'50 mg':selected_units,
                     );
                   },
                   child: Icon(
                     Icons.add,
                     size: 15,
-                    color: Color(0xffd0b84c),
+                    color: primaryColor,
                   ),
                 ),
               ],
@@ -133,7 +136,7 @@ class _CountState extends State<Count> {
                     cartName: widget.productName,
                     cartPrice: widget.productPrice,
                     cartQuantity: count,
-                    cartUnit: widget.productUnit,
+                    cartUnit: selected_units==null?'50 mg':selected_units,
                   );
                 },
                 child: Text(

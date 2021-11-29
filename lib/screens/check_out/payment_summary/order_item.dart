@@ -28,7 +28,7 @@ class OrderItem extends StatelessWidget {
             ),
           ),
           Text(
-            "\$${e.cartPrice}",
+            "\Rs ${e.cartPrice}",
             
           ),
         ],

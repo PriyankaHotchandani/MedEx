@@ -4,6 +4,7 @@ import 'package:medx/config/colors.dart';
 import 'package:medx/providers/review_cart_provider.dart';
 import 'package:medx/widgets/count.dart';
 import 'package:provider/provider.dart';
+import 'package:medx/screens/home/single_product.dart';
 
 class SingleItem extends StatefulWidget {
   bool isBool = false;
@@ -76,14 +77,14 @@ class _SingleItemState extends State<SingleItem> {
                           Text(
                             widget.productName,
                             style: TextStyle(
-                                color: textColor,
+                                color: Colors.black,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16),
                           ),
                           Text(
-                            "${widget.productPrice}\$",
+                            "Rs ${widget.productPrice}",
                             style: TextStyle(
-                                color: textColor, fontWeight: FontWeight.bold),
+                                color: Colors.grey),
                           ),
                         ],
                       ),
@@ -125,7 +126,7 @@ class _SingleItemState extends State<SingleItem> {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                       "50 Gram",
+                                       '250 mg',
                                         style: TextStyle(
                                           color: Colors.grey,
                                           fontSize: 14,
@@ -160,6 +161,7 @@ class _SingleItemState extends State<SingleItem> {
                           productImage: widget.productImage,
                           productName: widget.productName,
                           productPrice: widget.productPrice,
+                          productUnit: selected_units==null?'50 mg':selected_units,
                         )
                       : Padding(
                           padding: const EdgeInsets.only(top: 8),
@@ -211,6 +213,7 @@ class _SingleItemState extends State<SingleItem> {
                                                     cartPrice:
                                                         widget.productPrice,
                                                     cartQuantity: count,
+                                                    cartUnit :selected_units==null?'50 mg':selected_units,
                                                   );
                                                 }
                                               },
@@ -242,6 +245,7 @@ class _SingleItemState extends State<SingleItem> {
                                                     cartPrice:
                                                         widget.productPrice,
                                                     cartQuantity: count,
+                                                    cartUnit: selected_units==null?'50 mg':selected_units,
                                                   );
                                                 }
                                               },

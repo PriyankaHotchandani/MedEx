@@ -6,6 +6,7 @@ import 'package:medx/providers/review_cart_provider.dart';
 import 'package:medx/screens/check_out/delivery_details/delivery_details.dart';
 import 'package:medx/widgets/single_item.dart';
 import 'package:provider/provider.dart';
+import 'package:medx/screens/home/single_product.dart';
 
 class ReviewCart extends StatelessWidget {
   ReviewCartProvider reviewCartProvider;
@@ -28,7 +29,7 @@ class ReviewCart extends StatelessWidget {
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
       title: Text("Cart Product"),
-      content: Text("Are you devete on cartProduct?"),
+      content: Text("Do you want to delete this cart item?"),
       actions: [
         cancelButton,
         continueButton,
@@ -46,13 +47,14 @@ class ReviewCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     reviewCartProvider = Provider.of<ReviewCartProvider>(context);
     reviewCartProvider.getReviewCartData();
     return Scaffold(
       bottomNavigationBar: ListTile(
-        title: Text("Total Aount"),
+        title: Text("Total Amount"),
         subtitle: Text(
-          "\$ ${reviewCartProvider.getTotalPrice()}",
+          "\Rs ${reviewCartProvider.getTotalPrice()}",
           style: TextStyle(
             color: Colors.green[900],
           ),
@@ -60,7 +62,9 @@ class ReviewCart extends StatelessWidget {
         trailing: Container(
           width: 160,
           child: MaterialButton(
-            child: Text("Submit"),
+            child: Text("Submit",
+            style: TextStyle(color: Colors.white),
+            ),
             color: primaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(
@@ -81,6 +85,7 @@ class ReviewCart extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
+        backgroundColor: primaryColor,
         title: Text(
           "Review Cart",
           style: TextStyle(color: textColor, fontSize: 18),
@@ -95,11 +100,19 @@ class ReviewCart extends StatelessWidget {
               itemBuilder: (context, index) {
                 ReviewCartModel data =
                     reviewCartProvider.getReviewCartDataList[index];
+                print("Here review cart");
+                print(data.cartName);
+                print(data.cartId);
+                print(data.cartImage);
+                print(data.cartPrice);
+                print(data.cartQuantity);
+                print(data.cartUnit);
                 return Column(
                   children: [
                     SizedBox(
                       height: 10,
                     ),
+                    
                     SingleItem(
                       isBool: true,
                       wishList: false,

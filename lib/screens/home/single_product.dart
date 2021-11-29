@@ -23,12 +23,15 @@ class singleProduct extends StatefulWidget {
   _singleProductState createState() => _singleProductState();
 }
 
+String selected_units ='250 mg';
+
 class _singleProductState extends State<singleProduct> {
   var unitData;
   var firstValue;
   @override
   Widget build(BuildContext context) {
     widget.productUnit.productUnit.firstWhere((element) {
+      selected_units = firstValue;
       setState(() {
         firstValue = element;
       });
@@ -113,7 +116,9 @@ class _singleProductState extends State<singleProduct> {
                                                       vertical: 10,
                                                       horizontal: 10),
                                                   child: InkWell(
+                                                    focusColor:Colors.black,
                                                     onTap: () async {
+                                                      selected_units = data;
                                                       setState(() {
                                                         unitData = data;
                                                       });
@@ -139,6 +144,12 @@ class _singleProductState extends State<singleProduct> {
                             ),
                             SizedBox(
                               width: 5,
+                              
+                              child: const DecoratedBox(
+                              decoration: const BoxDecoration(
+                                color: Colors.black
+                              ),
+                            ),
                             ),
                             Count(
                               productId: widget.productId,

@@ -10,14 +10,19 @@ class CostomGoogleMap extends StatefulWidget {
   @override
   _GoogleMapState createState() => _GoogleMapState();
 }
+List<Marker> _markers = <Marker>[];
 
 class _GoogleMapState extends State<CostomGoogleMap> {
   LatLng _initialcameraposition = LatLng(20.5937, 78.9629);
+  
   GoogleMapController controller;
   Location _location = Location();
+  
   void _onMapCreated(GoogleMapController _value) {
     controller = _value;
     _location.onLocationChanged.listen((event) {
+      
+      _markers.add(Marker(markerId: MarkerId('1'),position: LatLng(event.latitude, event.longitude)));
       controller.animateCamera(
         CameraUpdate.newCameraPosition(
           CameraPosition(
@@ -29,6 +34,15 @@ class _GoogleMapState extends State<CostomGoogleMap> {
 
   @override
   Widget build(BuildContext context) {
+      _markers.add(
+        Marker(
+        markerId: MarkerId('1'),
+        position: LatLng(20.5937,78.9629),
+        infoWindow: InfoWindow(
+        title: 'Your location'
+        )
+      )
+    );
     CheckoutProvider checkoutProvider = Provider.of(context);
     return Scaffold(
       body: SafeArea(
@@ -38,6 +52,7 @@ class _GoogleMapState extends State<CostomGoogleMap> {
           child: Stack(
             children: [
               GoogleMap(
+                markers: Set<Marker>.of(_markers),
                 initialCameraPosition: CameraPosition(
                   target: _initialcameraposition,
                 ),

@@ -3,6 +3,12 @@ import 'package:medx/config/colors.dart';
 import 'package:medx/models/user_model.dart';
 import 'package:medx/providers/user_provider.dart';
 import 'package:medx/screens/home/drawer_side.dart';
+import 'package:medx/screens/check_out/delivery_details/delivery_details.dart';
+import 'package:medx/screens/review_cart/review_cart.dart';
+import 'package:medx/screens/home/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:medx/auth/sign_in.dart';
 
 class MyProfile extends StatefulWidget {
   UserProvider userProvider;
@@ -14,13 +20,14 @@ class MyProfile extends StatefulWidget {
 
 class _MyProfileState extends State<MyProfile> {
   @override
-  Widget listTile({IconData icon, String title}) {
+  Widget listTile({IconData icon, String title,Function onTap}) {
     return Column(
       children: [
         Divider(
           height: 1,
         ),
         ListTile(
+          onTap: onTap,
           leading: Icon(icon),
           title: Text(title),
           trailing: Icon(Icons.arrow_forward_ios),
@@ -35,6 +42,7 @@ class _MyProfileState extends State<MyProfile> {
     return Scaffold(
       backgroundColor: primaryColor,
       appBar: AppBar(
+        backgroundColor: primaryColor,
         elevation: 0.0,
         title: Text(
           "My Profile",
@@ -112,20 +120,47 @@ class _MyProfileState extends State<MyProfile> {
                         ),
                       ],
                     ),
-                    listTile(icon: Icons.shop_outlined, title: "My Orders"),
+                    listTile(icon: Icons.add_shopping_cart, title: "My Cart",
+                    onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => ReviewCart(),
+                          ),
+                        );
+                      },
+                    ),
                     listTile(
                         icon: Icons.location_on_outlined,
-                        title: "My Delivery Address"),
+                        title: "My Delivery Address",
+                        onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => DeliveryDetails(),
+                          ),
+                        );
+                      }),
+                    
+                    listTile(icon: Icons.add_chart, title: "About",
+                    onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => HomeScreen(),
+                          ),
+                        );
+                      },
+                    ),
                     listTile(
-                        icon: Icons.person_outline, title: "Refer A Friends"),
-                    listTile(
-                        icon: Icons.file_copy_outlined,
-                        title: "Terms & Conditions"),
-                    listTile(
-                        icon: Icons.policy_outlined, title: "Privacy Policy"),
-                    listTile(icon: Icons.add_chart, title: "About"),
-                    listTile(
-                        icon: Icons.exit_to_app_outlined, title: "Log Out"),
+                        icon: Icons.exit_to_app_outlined, title: "Log Out",
+                        onTap: () async{
+                          final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+                          await _firebaseAuth.signOut();
+                          Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => SignIn(),
+                          ),
+                        );
+                       },
+                        ),
                   ],
                 ),
               )
