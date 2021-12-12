@@ -52,22 +52,16 @@
 <div>
 <h3>Sign-In</h3>
 <img src="assets/signin.jpeg" height="500">
-<br><br>
 <h3>Home</h3>
 <img src="assets/home.jpeg" height="500">
-<br><br>
 <h3>Product Overview</h3>
 <img src="assets/product.jpeg" height="500">
-<br><br>
 <h3>Product Cart</h3>
 <img src="assets/cart.jpeg" height="500">
-<br><br>
 <h3>Address Using Google Maps</h3>
 <img src="assets/maps.jpeg" height="500">
-<br><br>
 <h3>Payment</h3>
 <img src="assets/payment.jpeg" height="500">
-<br><br>
 <h3>Check-Out</h3>
 <img src="assets/order.jpeg" height="500">
 <br><br>
