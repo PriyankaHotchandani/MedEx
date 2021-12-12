@@ -53,7 +53,7 @@
 <br>
 <div>
 <h3>Sign-In</h3>
-<img src="assets/signin.jpeg" height="300">
+<img src="assets/signin.jpeg" height="500">
 <br><br>
 <h3>Home</h3>
 <img src="assets/home.jpeg">
