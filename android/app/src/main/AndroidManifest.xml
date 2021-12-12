@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.my_food_app">
+    package="com.example.medEx">
        <uses-permission
 android:name="android.permission.ACCESS_FINE_LOCATION" />
    <uses-permission
 android:name="android.permission.ACCESS_COARSE_LOCATION" />
    <application
-        android:label="food_app"
+        android:label="medEx"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyCRRnJl9Dcjdf2HAl2U-YgkLPaVHEozSR8"/>

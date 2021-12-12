@@ -5,7 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medx/config/colors.dart';
 import 'package:medx/models/review_cart_model.dart';
-import 'package:medx/providers/wishlist_provider.dart';
 import 'package:medx/screens/review_cart/review_cart.dart';
 import 'package:medx/widgets/count.dart';
 import 'package:provider/provider.dart';
@@ -66,40 +65,11 @@ class _ProductOverviewState extends State<ProductOverview> {
     );
   }
 
-  bool wishListBool = false;
-
-  getWishtListBool() {
-    print("The Product ID");
-    print(widget.productId);
-    print(selected_units);
-    FirebaseFirestore.instance
-        .collection("WishList")
-        .doc(FirebaseAuth.instance.currentUser.uid)
-        .collection("YourWishList")
-        .doc(widget.productId)
-        .get()
-        .then((value) => {
-              if (this.mounted)
-                {
-                  if (value.exists)
-                    {
-                      setState(
-                        () {
-                          wishListBool = value.get("wishList");
-                        },
-                      ),
-                    }
-                }
-            });
-  }
-
   @override
   Widget build(BuildContext context) {
     print("Widget here");
     print(widget);
-    
-    WishListProvider wishListProvider = Provider.of(context);
-    getWishtListBool();
+
     return Scaffold(
       bottomNavigationBar: Row(
         children: [

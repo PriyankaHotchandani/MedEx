@@ -10,7 +10,6 @@ class SingleItem extends StatefulWidget {
   bool isBool = false;
   String productImage;
   String productName;
-  bool wishList = false;
   int productPrice;
   String productId;
   int productQuantity;
@@ -25,7 +24,6 @@ class SingleItem extends StatefulWidget {
       this.productImage,
       this.productName,
       this.productPrice,
-      this.wishList});
 
   @override
   _SingleItemState createState() => _SingleItemState();
@@ -178,7 +176,6 @@ class _SingleItemState extends State<SingleItem> {
                               SizedBox(
                                 height: 5,
                               ),
-                              widget.wishList == false
                                   ? Container(
                                       height: 25,
                                       width: 70,

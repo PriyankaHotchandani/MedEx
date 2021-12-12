@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:467077691610:android:334036889dc74590d0cde3",
         "android_client_info": {
-          "package_name": "com.example.my_food_app"
+          "package_name": "com.example.medEx"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "467077691610-v6papgtjvqahfaokg3ju6lflv7m4n39c.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.my_food_app",
+            "package_name": "com.example.medEx",
             "certificate_hash": "1590c2f4bf279e47c1eb17c97999012e256bc626"
           }
         },
