@@ -93,8 +93,8 @@ class ProductProvider with ChangeNotifier {
     return nutritionProductList;
   }
 
-  /////////////////// Search Return ////////////
-  List<ProductModel> get getAllProductSearch {
+  // Search Return
+    List<ProductModel> get getAllProductSearch {
     return search;
   }
 }

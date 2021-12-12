@@ -3,7 +3,6 @@ import 'package:medx/config/colors.dart';
 import 'package:medx/models/delivery_address_model.dart';
 import 'package:medx/providers/review_cart_provider.dart';
 import 'package:medx/screens/check_out/delivery_details/single_delivery_item.dart';
-import 'package:medx/screens/check_out/payment_summary/my_google_pay.dart';
 import 'package:medx/screens/check_out/payment_summary/order_item.dart';
 import 'package:provider/provider.dart';
 import 'package:medx/screens/home/home_screen.dart';
@@ -40,7 +39,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
       },
     );
    
-    // set up the AlertDialog
+    // set up the Alert box
     AlertDialog alert = AlertDialog(
       title: Text("Your order has been placed successfully!"),
       content: Text("Check your email for order details"),
@@ -66,10 +65,6 @@ class _PaymentSummaryState extends State<PaymentSummary> {
 
     double total;
     double totalPrice = reviewCartProvider.getTotalPrice();
-    // if (totalPrice > 300) {
-    //   discountValue = (totalPrice * discount) / 100;
-    //   total = totalPrice - discountValue;
-    // }
 
     return Scaffold(
       appBar: AppBar(

@@ -4,7 +4,6 @@ import 'package:medx/models/delivery_address_model.dart';
 import 'package:medx/providers/check_out_provider.dart';
 import 'package:medx/screens/check_out/add_delivery_address/add_delivery_address.dart';
 import 'package:medx/screens/check_out/delivery_details/single_delivery_item.dart';
-import 'package:medx/screens/check_out/payment_summary/payment_summary.dart';
 import 'package:provider/provider.dart';
 
 class DeliveryDetails extends StatefulWidget {
@@ -42,7 +41,7 @@ class _DeliveryDetailsState extends State<DeliveryDetails> {
         margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: MaterialButton(
           child: deliveryAddressProvider.getDeliveryAddressList.isEmpty
-              ? Text("Add new Address",style : TextStyle(color: Colors.white))
+              ? Text("Add New Address",style : TextStyle(color: Colors.white))
               : Text("Payment Summary",style : TextStyle(color: Colors.white)),
           onPressed: () {
             deliveryAddressProvider.getDeliveryAddressList.isEmpty

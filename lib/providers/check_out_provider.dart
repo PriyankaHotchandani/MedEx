@@ -138,16 +138,6 @@ class CheckoutProvider with ChangeNotifier {
                   "orderQuantity": e.cartQuantity
                 })
             .toList(),
-        // "address": address
-        //     .map((e) => {
-        //           "orderTime": DateTime.now(),
-        //           "orderImage": e.cartImage,
-        //           "orderName": e.cartName,
-        //           "orderUnit": e.cartUnit,
-        //           "orderPrice": e.cartPrice,
-        //           "orderQuantity": e.cartQuantity
-        //         })
-        //     .toList(),
       },
     );
   }

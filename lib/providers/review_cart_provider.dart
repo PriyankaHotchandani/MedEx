@@ -59,10 +59,6 @@ void updateReviewCartData({
   }
 
 
-
-
-
-
   List<ReviewCartModel> reviewCartDataList = [];
   void getReviewCartData() async {
     List<ReviewCartModel> newList = [];
@@ -92,20 +88,20 @@ void updateReviewCartData({
   }
 
 
-//// TotalPrice  ///
 
 
-getTotalPrice(){
-  double total = 0.0;
-  reviewCartDataList.forEach((element) { 
-    total += element.cartPrice * element.cartQuantity;
-    
-  });
-  return total;
-}
+// Total Price  
+  getTotalPrice(){
+    double total = 0.0;
+    reviewCartDataList.forEach((element) { 
+      total += element.cartPrice * element.cartQuantity;
+      
+    });
+    return total;
+  }
 
 
-////////////// ReviCartDeleteFunction ////////////
+// Review Cart Delete Function 
   reviewCartDataDelete(cartId) {
     FirebaseFirestore.instance
         .collection("ReviewCart")

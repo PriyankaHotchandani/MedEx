@@ -196,7 +196,7 @@ class _SingleItemState extends State<SingleItem> {
                                                 if (count == 1) {
                                                   Fluttertoast.showToast(
                                                     msg:
-                                                        "You reach minimum limit",
+                                                        "You've reached minimum limit",
                                                 
                                                   );
                                                 } else {

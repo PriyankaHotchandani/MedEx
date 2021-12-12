@@ -39,7 +39,7 @@ class _GoogleMapState extends State<CostomGoogleMap> {
         markerId: MarkerId('1'),
         position: LatLng(20.5937,78.9629),
         infoWindow: InfoWindow(
-        title: 'Your location'
+        title: 'Your Location'
         )
       )
     );

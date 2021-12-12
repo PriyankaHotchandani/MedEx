@@ -7,7 +7,6 @@ import 'package:medx/providers/check_out_provider.dart';
 import 'package:medx/providers/product_provider.dart';
 import 'package:medx/providers/review_cart_provider.dart';
 import 'package:medx/providers/user_provider.dart';
-import 'package:medx/providers/wishlist_provider.dart';
 import 'package:medx/screens/home/home_screen.dart';
 import 'package:provider/provider.dart';
 

@@ -26,7 +26,7 @@ class ProductUnit extends StatelessWidget {
               child: Icon(
                 Icons.arrow_drop_down,
                 size: 20,
-                color: Colors.yellow,
+                color: Colors.teal,
               ),
             )
           ],

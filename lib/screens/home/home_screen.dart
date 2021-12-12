@@ -74,9 +74,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
             ).toList(),
-            // children: [
-
-            // ],
           ),
         ),
       ],
@@ -117,25 +114,25 @@ class _HomeScreenState extends State<HomeScreen> {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: productProvider.getCovidProductDataList.map(
-              (freshProductData) {
+              (covidData) {
                 return singleProduct(
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => ProductOverview(
-                          productId: freshProductData.productId,
-                          productImage: freshProductData.productImage,
-                          productName: freshProductData.productName,
-                          productPrice: freshProductData.productPrice,
+                          productId: covidData.productId,
+                          productImage: covidData.productImage,
+                          productName: covidData.productName,
+                          productPrice: covidData.productPrice,
                         ),
                       ),
                     );
                   },
-                  productId: freshProductData.productId,
-                  productImage: freshProductData.productImage,
-                  productName: freshProductData.productName,
-                  productPrice: freshProductData.productPrice,
-                  productUnit:freshProductData,
+                  productId: covidData.productId,
+                  productImage: covidData.productImage,
+                  productName: covidData.productName,
+                  productPrice: covidData.productPrice,
+                  productUnit:covidData,
                 );
               },
             ).toList(),
@@ -180,25 +177,25 @@ class _HomeScreenState extends State<HomeScreen> {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: productProvider.getNutritionProductDataList.map(
-              (rootProductData) {
+              (nutritionData) {
                 return singleProduct(
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => ProductOverview(
-                          productId: rootProductData.productId,
-                          productImage: rootProductData.productImage,
-                          productName: rootProductData.productName,
-                          productPrice: rootProductData.productPrice,
+                          productId: nutritionData.productId,
+                          productImage: nutritionData.productImage,
+                          productName: nutritionData.productName,
+                          productPrice: nutritionData.productPrice,
                         ),
                       ),
                     );
                   },
-                  productId: rootProductData.productId,
-                  productImage: rootProductData.productImage,
-                  productName: rootProductData.productName,
-                  productPrice: rootProductData.productPrice,
-                  productUnit: rootProductData,
+                  productId: nutritionData.productId,
+                  productImage: nutritionData.productImage,
+                  productName: nutritionData.productName,
+                  productPrice: nutritionData.productPrice,
+                  productUnit: nutritionData,
                 );
               },
             ).toList(),

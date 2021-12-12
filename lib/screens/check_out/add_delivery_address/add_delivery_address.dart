@@ -76,11 +76,11 @@ class _AddDeliverAddressState extends State<AddDeliverAddress> {
         child: ListView(
           children: [
             CostomTextField(
-              labText: "First name",
+              labText: "First Name",
               controller: checkoutProvider.firstName,
             ),
             CostomTextField(
-              labText: "Last name",
+              labText: "Last Name",
               controller: checkoutProvider.lastName,
             ),
             CostomTextField(
@@ -108,7 +108,7 @@ class _AddDeliverAddressState extends State<AddDeliverAddress> {
               controller: checkoutProvider.city,
             ),
             CostomTextField(
-              labText: "area",
+              labText: "Area",
               controller: checkoutProvider.area,
             ),
             CostomTextField(
@@ -135,7 +135,7 @@ class _AddDeliverAddressState extends State<AddDeliverAddress> {
                       
                       listTile(
                       iconData: Icons.map_rounded,
-                      title: "Select location from maps",
+                      title: "Select Location From Maps",
                       
                     )):
                     Text("Done!"),

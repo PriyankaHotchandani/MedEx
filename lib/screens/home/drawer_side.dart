@@ -4,7 +4,6 @@ import 'package:medx/providers/user_provider.dart';
 import 'package:medx/screens/home/home_screen.dart';
 import 'package:medx/screens/my_profile/my_profile.dart';
 import 'package:medx/screens/review_cart/review_cart.dart';
-import 'package:medx/screens/wishList/wish_list.dart';
 
 class DrawerSide extends StatefulWidget {
   UserProvider userProvider;
@@ -120,15 +119,6 @@ class _DrawerSideState extends State<DrawerSide> {
                   SizedBox(
                     height: 10,
                   ),
-                  // Row(
-                  //   children: [
-                  //     Text("Call us:"),
-                  //     SizedBox(
-                  //       width: 10,
-                  //     ),
-                  //     Text("+913784683543"),
-                  //   ],
-                  // ),
                   SizedBox(
                     height: 5,
                   ),
