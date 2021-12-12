@@ -13,7 +13,6 @@
 [![](https://img.shields.io/badge/Made_with-dart-red?style=for-the-badge&logo=dart)](https://dart.dev/)
 
 
-</br>
 
 </div>
 
@@ -49,8 +48,7 @@
 
 ---
 
-<h2><strong>Screenshots</strong></h2>
-<br>
+<h2><strong>App Screenshots</strong></h2>
 <div>
 <h3>Sign-In</h3>
 <img src="assets/signin.jpeg" height="500">
