@@ -65,6 +65,8 @@
 <h3>Check-Out</h3>
 <img src="assets/order.jpeg" height="500">
 <br><br>
+<h3>Demo Video: <h3>
+https://drive.google.com/file/d/17yjGqlTXQgpO4DjiAmSvjQP8MJM-oPi8/view?usp=sharing
 </div>
 
 </div>
